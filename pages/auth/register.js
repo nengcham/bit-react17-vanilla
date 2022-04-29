@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { Register } from '@/components';
-import { register } from '@/modules/auth/register';
+import { registerRequest, unregisterRequest } from '@/modules/auth/register';
 
 const RegisterPage = () => {
     const [user, setUser] =useState({
@@ -16,19 +16,12 @@ const RegisterPage = () => {
     const onSubmit = e => {
         e.preventDefault()
         alert('회원가입 정보: '+JSON.stringify(user))
-        dispatch()
-        // window.location.href = "./login"
+        dispatch(registerRequest(user))
     }
   return (
     <Register onChange={onChange} onSubmit={onSubmit}/>
   );
 };
-
-export default connect(
-  state => ({
-    registerUser: state.registerUser
-  }),
-  {
-    register
-  }
-)(RegisterPage);
+const mapStateToProps = state => ({isRegistered: state.register.isRegistered})
+const registerActions = {registerRequest, unregisterRequest}
+export default connect(mapStateToProps, registerActions)(RegisterPage)
