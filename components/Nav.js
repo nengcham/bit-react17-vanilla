@@ -12,6 +12,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { createSvgIcon } from '@mui/material/utils';
 import { useSelector } from "react-redux"
+import { logoutRequest } from '@/modules/auth/login'
 
 const HomeIcon = createSvgIcon(
   <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />,
@@ -43,6 +44,10 @@ export function Nav(){
   };
 
   const isLoggined = useSelector(state => state.login.isLoggined)
+  const handleLogout = e => {
+    e.preventDefault()
+    dispatch(logoutRequest())
+  }
 
   useEffect(() => {
     if (!isLoggined) {
