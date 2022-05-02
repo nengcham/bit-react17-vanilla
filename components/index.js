@@ -1,3 +1,5 @@
+export * from "./Home"
+export * from "./user/Profile"
 export * from "./Footer"
 export * from "./Header"
 export * from "./Layout"

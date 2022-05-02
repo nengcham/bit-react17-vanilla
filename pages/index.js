@@ -1,8 +1,8 @@
-import { Layout } from '@/components'
+import { Layout, Home } from '@/components'
 import styles from '@/styles/Home.module.css'
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <Layout/>
+    <Home/>
   )
 }
