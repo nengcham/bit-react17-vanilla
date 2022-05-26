@@ -123,19 +123,10 @@ export function Nav() {
                         </Box>
                     </Typography>
 
-                    <Box
-                        sx={{
-                            flexGrow: 1,
-                            color: 'white',
-                            display: {
-                                xs: 'none',
-                                md: 'flex'
-                            }
+                    <Box sx={{ flexGrow: 1, color: 'white',
+                            display: { xs: 'none', md: 'flex' }
                         }}>
-                        {
-                            basicSettings
-                                .urls
-                                .map((urls, i) => (
+                        { basicSettings.urls.map((urls, i) => (
                                     <a
                                         href={urls}
                                         key={i}

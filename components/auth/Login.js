@@ -41,9 +41,9 @@ export function Login({onChange, onSubmit}){
               margin="normal"
               required
               fullWidth
-              id="userid"
+              id="username"
               label="아이디"
-              name="userid"
+              name="username"
               autoFocus
               onChange={onChange}
             />
